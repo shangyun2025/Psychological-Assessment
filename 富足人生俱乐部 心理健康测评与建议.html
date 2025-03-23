@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心理健康测评系统</title>
+    <!-- 版权声明 -->
+    <meta name="author" content="尚瑞强">
+    <meta name="copyright" content="版权所有 (c) 尚瑞强，保留所有权利">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9e9f3;
+            margin: 0;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #result {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        #appointmentConfirm {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            margin-top: 30px;
+            display: none;
+        }
+
+        #appointmentConfirm h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        #appointmentConfirm p {
+            margin-bottom: 10px;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .smaller-font {
+            font-size: calc(1em - 0.25em);
+        }
+    </style>
+</head>
+
+<body>
+    <span style="font-size: calc(2.5rem - 0.75rem);">富足人生俱乐部</span>
+    <h1>心理健康测评与建议</h1>
+    <form id="assessmentForm">
+        <div class="question">
+            <label>1. 在过去的两周内，你做事时提不起劲或没有兴趣的频率如何？</label>
+            <input type="radio" name="q1" value="0"> 完全不会<br>
+            <input type="radio" name="q1" value="1"> 好几天<br>
+            <input type="radio" name="q1" value="2"> 一半以上的天数<br>
+            <input type="radio" name="q1" value="3"> 几乎每天<br>
+        </div>
+        <div class="question">
+            <label>2. 在过去的两周内，你感到心情低落、沮丧或绝望的频率如何？</label>
+            <input type="radio" name="q2" value="0"> 完全不会<br>
+            <input type="radio" name="q2" value="1"> 好几天<br>
+            <input type="radio" name="q2" value="2"> 一半以上的天数<br>
+            <input type="radio" name="q2" value="3"> 几乎每天<br>
+        </div>
+        <div class="question">
+            <label>3. 在过去的两周内，你入睡困难、睡不安稳或睡眠过多的频率如何？</label>
+            <input type="radio" name="q3" value="0"> 完全不会<br>
+            <input type="radio" name="q3" value="1"> 好几天<br>
+            <input type="radio" name="q3" value="2"> 一半以上的天数<br>
+            <input type="radio" name="q3" value="3"> 几乎每天<br>
+        </div>
+        <div class="question">
+            <label>4. 在过去的两周内，你感觉疲倦或没有活力的频率如何？</label>
+            <input type="radio" name="q4" value="0"> 完全不会<br>
+            <input type="radio" name="q4" value="1"> 好几天<br>
+            <input type="radio" name="q4" value="2"> 一半以上的天数<br>
+            <input type="radio" name="q4" value="3"> 几乎每天<br>
+        </div>
+        <div class="question">
+            <label>5. 在过去的两周内，你食欲不振或吃太多的频率如何？</label>
+            <input type="radio" name="q5" value="0"> 完全不会<br>
+            <input type="radio" name="q5" value="1"> 好几天<br>
+            <input type="radio" name="q5" value="2"> 一半以上的天数<br>
+            <input type="radio" name="q5" value="3"> 几乎每天<br>
+        </div>
+        <div class="question">
+            <label>6. 在过去的两周内，你觉得自己很糟，或觉得自己很失败，或让自己或家人失望的频率如何？</label>
+            <input type="radio" name="q6" value="0"> 完全不会<br>
+            <input type="radio" name="q6" value="1"> 好几天<br>
+            <input type="radio" name="q6" value="2"> 一半以上的天数<br>
+            <input type="radio" name="q6" value="3"> 几乎每天<br>
+        </div>
+        <div class="question">
+            <label>7. 在过去的两周内，你对事物专注有困难，例如阅读报纸或看电视时的频率如何？</label>
+            <input type="radio" name="q7" value="0"> 完全不会<br>
+            <input type="radio" name="q7" value="1"> 好几天<br>
+            <input type="radio" name="q7" value="2"> 一半以上的天数<br>
+            <input type="radio" name="q7" value="3"> 几乎每天<br>
+        </div>
+        <div class="question">
+            <label>8. 在过去的两周内，你动作或说话速度缓慢到别人已经注意到的频率如何？或正好相反，烦躁或坐立不安、动来动去的情况比平常多的频率如何？</label>
+            <input type="radio" name="q8" value="0"> 完全不会<br>
+            <input type="radio" name="q8" value="1"> 好几天<br>
+            <input type="radio" name="q8" value="2"> 一半以上的天数<br>
+            <input type="radio" name="q8" value="3"> 几乎每天<br>
+        </div>
+        <div class="question">
+            <label>9. 在过去的两周内，你有不如死掉或用某种方式伤害自己的念头的频率如何？</label>
+            <input type="radio" name="q9" value="0"> 完全不会<br>
+            <input type="radio" name="q9" value="1"> 好几天<br>
+            <input type="radio" name="q9" value="2"> 一半以上的天数<br>
+            <input type="radio" name="q9" value="3"> 几乎每天<br>
+        </div>
+        <button type="button" onclick="calculateResult()">提交测评</button>
+        <button type="button" onclick="resetForm()">重置表单</button>
+    </form>
+    <div id="result"></div>
+    <div id="appointmentConfirm">
+        <h2>预约确认</h2>
+        <p>预约心理咨询请联系：尚老师</p>
+        <p>联系方式：13910380858（同微信）</p>
+        <p class="smaller-font">（加微信请说明：心理咨询）</p>
+        <button type="button" onclick="cancelAppointment()">取消预约</button>
+    </div>
+    <div class="copyright">富足人生俱乐部版权所有</div>
+
+    <script>
+        /**
+         * 计算测评结果
+         */
+        function calculateResult() {
+            const form = document.getElementById('assessmentForm');
+            let totalScore = 0;
+            // 遍历9个问题
+            for (let i = 1; i <= 9; i++) {
+                const radioButtons = form[`q${i}`];
+                // 遍历每个问题的选项
+                for (let j = 0; j < radioButtons.length; j++) {
+                    if (radioButtons[j].checked) {
+                        totalScore += parseInt(radioButtons[j].value);
+                        break;
+                    }
+                }
+            }
+
+            let resultText = '';
+            if (totalScore <= 4) {
+                resultText = '你的心理状态良好，继续保持积极的生活方式，多参加户外活动，与亲朋好友保持良好的沟通。';
+            } else if (totalScore <= 9) {
+                resultText = '你可能有轻微的抑郁倾向。建议你制定规律的作息时间表，保证充足的睡眠。同时，可以尝试一些放松的活动，如冥想、瑜伽或听音乐。';
+            } else if (totalScore <= 14) {
+                resultText = '你可能存在中度抑郁症状。除了保持规律的生活和进行放松活动外，建议你与身边信任的人分享你的感受，也可以考虑进行心理咨询。<br>';
+                resultText += '<button onclick="bookConsultation()">立即预约心理咨询</button>';
+            } else if (totalScore <= 19) {
+                resultText = '你可能有较严重的抑郁症状。请尽快寻求专业心理医生的帮助，同时，家人和朋友的支持也非常重要。<br>';
+                resultText += '<button onclick="bookConsultation()">立即预约心理咨询</button>';
+            } else {
+                resultText = '你目前的抑郁症状非常严重，需要立即寻求专业心理医生或精神科医生的帮助。请不要忽视自己的状况，及时采取行动。<br>';
+                resultText += '<button onclick="bookConsultation()">立即预约心理咨询</button>';
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<p>你的测评得分是：${totalScore}</p><p>${resultText}</p>`;
+        }
+
+        /**
+         * 预约心理咨询
+         */
+        function bookConsultation() {
+            // 模拟预约信息存储
+            const appointmentInfo = {
+                time: '2025 - 03 - 25 14:00',
+                counselor: '张医生'
+            };
+            localStorage.setItem('appointment', JSON.stringify(appointmentInfo));
+
+            // 显示预约确认页面
+            const appointmentConfirmDiv = document.getElementById('appointmentConfirm');
+            appointmentConfirmDiv.style.display = 'block';
+
+            // 更新预约信息
+            appointmentConfirmDiv.innerHTML = `
+                <h2>预约确认</h2>
+                <p>预约心理咨询请联系：尚老师</p>
+                <p>联系方式：13910380858（同微信）</p>
+                <p class="smaller-font">（加微信请说明：心理咨询）</p>
+                <button type="button" onclick="cancelAppointment()">取消预约</button>
+            `;
+        }
+
+        /**
+         * 取消预约
+         */
+        function cancelAppointment() {
+            localStorage.removeItem('appointment');
+            const appointmentConfirmDiv = document.getElementById('appointmentConfirm');
+            appointmentConfirmDiv.style.display = 'none';
+        }
+
+        /**
+         * 重置表单
+         */
+        function resetForm() {
+            document.getElementById('assessmentForm').reset();
+            document.getElementById('result').innerHTML = '';
+        }
+    </script>
+</body>
+
+</html>
+    
